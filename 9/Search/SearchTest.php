@@ -19,3 +19,15 @@ echo binarySearch($arr, NUM).PHP_EOL;
 
 echo "Интерполяционный".PHP_EOL;
 echo interpolationSearch($arr, NUM);
+
+// 2. Реализовать удаление элемента массива по его значению. Обратите внимание на возможные дубликаты!
+
+function delFromArr($arr, $val) {
+    $del = interpolationSearch($arr, $val);
+    if (!is_null($del)) {
+        unset($arr[$del]);
+        echo "Удаляю элемент номер $del";
+        delFromArr($arr, $del);
+    }
+}
+
